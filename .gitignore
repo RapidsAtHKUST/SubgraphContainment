@@ -1,5 +1,17 @@
-# Prerequisites
-*.d
+# Build Folder
+build/
+
+# Project file
+.cproject
+.project
+
+# CUDA
+*.i
+*.ii
+*.gpu
+*.ptx
+*.cubin
+*.fatbin
 
 # Compiled Object files
 *.slo
@@ -18,7 +30,6 @@
 
 # Fortran module files
 *.mod
-*.smod
 
 # Compiled Static libraries
 *.lai
@@ -30,3 +41,28 @@
 *.exe
 *.out
 *.app
+
+# Jupyter Check Point folders
+.ipynb_checkpoints/
+
+# CTags file
+*.tags
+*.tags_sorted_by_file
+
+
+# Result filename
+*.res
+*.xlsx
+*.xlsx#
+# CLion file
+.idea/
+
+# PDF files
+*.pdf
+
+# Data folders and Result folders
+build/
+data/
+result/
+cmake-build-debug/
+sample/
