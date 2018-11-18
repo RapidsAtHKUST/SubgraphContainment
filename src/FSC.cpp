@@ -64,7 +64,8 @@ void FSC::Query(const Graph *query_graph, int *query_results, int &results_count
     cout << endl;
 
     GetMemoryCost();
-    double filtering_precision = (valid_graph_num_) / (double)candidate_graph_num_;
+    double filtering_precision = candidate_graph_num_ == 0 ? 1 : (valid_graph_num_) / (double)candidate_graph_num_;
+    double per_verification_time = candidate_graph_num_ == 0 ? 0 : verification_time_ / candidate_graph_num_;
 
     processing_time_ = filtering_time_ + verification_time_;
     cout << "Candidate Graphs Count :" << candidate_graph_num_ << " ." << endl;
@@ -73,7 +74,7 @@ void FSC::Query(const Graph *query_graph, int *query_results, int &results_count
     cout << "Ordering Time : " << ordering_time_ << " us." << endl;
     cout << "Enumeration Time : " << enumeration_time_ << " us." << endl;
     cout << "Verification Time : " << verification_time_ << " us." << endl;
-    cout << "Per Verification Time : " << verification_time_ / candidate_graph_num_  << " us." << endl;
+    cout << "Per Verification Time : " <<  per_verification_time << " us." << endl;
     cout << "Processing Time : " << processing_time_ << " us." << endl;
     cout << "Verification Time due to false prediction : " << save_time_ << " us." << endl;
     cout << "Filtering Precision : " << filtering_precision << " ." << endl;
