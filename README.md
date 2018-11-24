@@ -2,32 +2,24 @@
 ## Introduction
 A subgraph query finds all data graphs in a graph
 database each of which contains the given query graph. Existing
-work takes the indexing-filtering-verification (IFV) approach
-to first index all data graphs, then filter out some of them
-based on the index, and finally test subgraph isomorphism on
-each of the remaining data graphs. This final test of subgraph
-isomorphism is a sub-problem of subgraph matching, which finds
-all subgraph isomorphisms from a query graph to a data graph.
-As such, in this paper, we study whether, and if so, how to
-utilize efficient subgraph matching to improve subgraph query
-processing. Specifically, we modify leading subgraph matching
-algorithms and integrate them with top-performing subgraph
-query processing algorithms. Our experimental results show
-that (1) the slow verification method in existing IFV algorithms
-can lead us to over-estimate the gain of filtering; and (2) The
-latest subgraph matching algorithms can be easily modified
-to the vertex connectivity based filtering-verification subgraph
-query processing algorithms, which is competitive with the IFV
-algorithms while do not rely on any indices. Considering the
-problems in the indexing of IFV algorithms such as the scalability
-issue and the update cost with data graphs modification, the
-second finding is very important as it provides an alternative
-approach of the IFV paradigm, which can scale up subgraph
-queries to hundreds of thousands of data graphs and graphs of
-tens of thousands of vertices, and makes an initial step towards
-the indexing-free subgraph query processing.
+work takes the indexing-filtering-verification (IFV) approach to
+first index all data graphs, then filter out some of them based on
+the index, and finally test subgraph isomorphism on each of the
+remaining data graphs. This final test of subgraph isomorphism is
+a sub-problem of subgraph matching, which finds all subgraph
+isomorphisms from a query graph to a data graph. As such,
+in this paper, we study whether, and if so, how to utilize effi-
+cient subgraph matching to improve subgraph query processing.
+Specifically, we modify leading subgraph matching algorithms
+and integrate them with top-performing subgraph querying
+algorithms. Our results show that (1) the slow verification method
+in existing IFV algorithms can lead us to over-estimate the gain of
+filtering; and (2) our modified subgraph querying algorithms with
+efficient subgraph matching are competitive in time performance
+and can scale to hundreds of thousands of data graphs and graphs
+of thousands of vertices.
 
-For the details, please refer to our ICDE'2019 paper (to be appeared)
+For the details, please refer to our ICDE'2019 paper
 "Scaling Up Subgraph Query Processing with Efficient Subgraph Matching"
 by [Shixuan Sun](https://github.com/shixuansun) and [Dr. Qiong Luo](http://www.cse.ust.hk/~luo/).
 If you have any further questions, please feel free to contact us.
